@@ -1,0 +1,39 @@
+{
+  "model_name": "Logistic Regression",
+  "model_version": "1.0.0",
+  "trained_date": "2026-09-30 11:27:11",
+  "dataset_name": "textile_news.csv",
+  "dataset_total_records": 279,
+  "train_samples": 223,
+  "test_samples": 56,
+  "vectorizer": {
+    "type": "TfidfVectorizer",
+    "max_features": 3000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "sublinear_tf": true,
+    "vocab_size": 976
+  },
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        30,
+        0
+      ],
+      [
+        0,
+        26
+      ]
+    ],
+    "labels": [
+      "REAL",
+      "FAKE"
+    ]
+  }
+}
