@@ -1,0 +1,55 @@
+services:
+  # ============================================================================
+  # 1. FastAPI + ML Backend Web Service
+  # ============================================================================
+  - type: web
+    name: fake-news-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: PROJECT_NAME
+        value: Textile Fake News Detection System
+      - key: API_V1_PREFIX
+        value: /api/v1
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRE_MINUTES
+        value: "1440"
+      - key: DATABASE_NAME
+        value: textile_fake_news
+      # Optional: MongoDB Atlas URI (leave unset to use automatic In-Memory fallback)
+      - key: MONGODB_URI
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+  # ============================================================================
+  # 2. React + Vite Frontend Static Site
+  # ============================================================================
+  - type: web
+    name: fake-news-frontend
+    env: static
+    plan: free
+    region: oregon
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      # Single-Page Application (SPA) routing fallback
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # URL pointing to the deployed backend service
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: fake-news-backend
+          property: url
