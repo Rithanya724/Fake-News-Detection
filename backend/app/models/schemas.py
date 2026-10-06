@@ -47,10 +47,10 @@ class PredictionResponse(BaseModel):
     confidence_percentage: float # 0.0 to 100.0
     model: str
     category: str
-    important_signals: List[SignalItem]
-    notice: str
+    important_signals: Optional[List[SignalItem]] = Field(default_factory=list)
+    notice: Optional[str] = "Statistical ML classification pattern."
     created_at: str
-    text_snippet: str
+    text_snippet: Optional[str] = ""
     title: Optional[str] = None
     source: Optional[str] = None
 

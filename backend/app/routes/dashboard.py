@@ -82,6 +82,10 @@ async def get_dashboard_stats(current_user: dict = Depends(get_current_user)):
     for p in all_predictions[:5]:
         p_copy = p.copy()
         p_copy["id"] = str(p.get("_id", p.get("id")))
+        if "text_snippet" not in p_copy or not p_copy["text_snippet"]:
+            p_copy["text_snippet"] = (p_copy.get("text") or "")[:120]
+        if "notice" not in p_copy:
+            p_copy["notice"] = "Statistical ML classification pattern."
         recent.append(p_copy)
 
     return {

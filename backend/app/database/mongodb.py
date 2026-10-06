@@ -397,6 +397,10 @@ class Database:
             ]
             for p in sample_predictions:
                 p["_id"] = str(uuid.uuid4())
+                if "text_snippet" not in p:
+                    p["text_snippet"] = (p.get("text") or "")[:120]
+                if "notice" not in p:
+                    p["notice"] = "Statistical ML classification pattern."
                 self.predictions.insert_one(p)
 
     def close(self):
