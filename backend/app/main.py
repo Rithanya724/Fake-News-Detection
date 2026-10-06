@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 
 from app.config.settings import settings
 from app.database.mongodb import db_instance
+from app.services.prediction_service import prediction_service
 from app.routes import auth, prediction, history, dashboard, admin
 
 @asynccontextmanager
@@ -16,6 +17,9 @@ async def lifespan(app: FastAPI):
     # Startup: Initialize MongoDB and load ML artifacts
     print("[*] FastAPI Application starting up...")
     db_instance.connect()
+    # Pre-warm ML model & vectorizer in memory so predict endpoint has zero initial lag
+    _ = prediction_service.metadata
+    print("[+] ML engine pre-warmed and ready.")
     yield
     # Shutdown: Close database connections
     print("[*] FastAPI Application shutting down...")

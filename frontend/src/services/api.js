@@ -4,7 +4,11 @@ const resolveBaseURL = () => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (!envUrl) return '/api/v1';
   let clean = envUrl.trim().replace(/\/+$/, '');
+  
   if (!clean.startsWith('http://') && !clean.startsWith('https://') && !clean.startsWith('/')) {
+    if (!clean.includes('.')) {
+      clean = `${clean}.onrender.com`;
+    }
     clean = `https://${clean}`;
   }
   return clean.endsWith('/api/v1') ? clean : `${clean}/api/v1`;

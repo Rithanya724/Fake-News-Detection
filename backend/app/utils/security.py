@@ -14,7 +14,7 @@ def hash_password(password: str) -> str:
         return ""
     # Truncate to 72 bytes as per standard bcrypt specification
     pwd_bytes = password.encode("utf-8")[:72]
-    salt = bcrypt.gensalt()
+    salt = bcrypt.gensalt(rounds=10)
     hashed = bcrypt.hashpw(pwd_bytes, salt)
     return hashed.decode("utf-8")
 

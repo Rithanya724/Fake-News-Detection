@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ProtectedRoute, AdminRoute } from './components/ProtectedRoute';
+import api from './services/api';
 
 import { LandingPage } from './pages/LandingPage';
 import { LoginPage } from './pages/LoginPage';
@@ -17,6 +18,11 @@ import { ProfilePage } from './pages/ProfilePage';
 import { AdminPage } from './pages/AdminPage';
 
 export const App = () => {
+  useEffect(() => {
+    // Proactively pre-warm backend server in background upon page load
+    api.get('/health').catch(() => {});
+  }, []);
+
   return (
     <AuthProvider>
       <BrowserRouter>

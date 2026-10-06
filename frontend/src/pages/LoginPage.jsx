@@ -116,8 +116,14 @@ export const LoginPage = () => {
               loading={loading}
               className="w-full mt-2"
             >
-              Sign In
+              {loading ? 'Signing In...' : 'Sign In'}
             </Button>
+
+            {loading && (
+              <p className="text-[11px] text-[#A8958B] text-center animate-pulse pt-1">
+                ⏳ Connecting to server... (First request may take ~30s if Render instance is waking up)
+              </p>
+            )}
           </form>
 
           <div className="pt-3 text-center text-xs text-[#A8958B] border-t border-[#451F1B]">

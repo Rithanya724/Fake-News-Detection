@@ -179,7 +179,16 @@ class Database:
             
         try:
             print(f"[*] Attempting MongoDB connection to: {settings.MONGODB_URI}...")
-            self.client = MongoClient(settings.MONGODB_URI, serverSelectionTimeoutMS=2000)
+            self.client = MongoClient(
+                settings.MONGODB_URI,
+                serverSelectionTimeoutMS=2500,
+                connectTimeoutMS=2500,
+                socketTimeoutMS=5000,
+                maxPoolSize=50,
+                minPoolSize=5,
+                maxIdleTimeMS=45000,
+                retryWrites=True
+            )
             self.client.server_info()
             self.db = self.client[settings.DATABASE_NAME]
             self.users = self.db["users"]
