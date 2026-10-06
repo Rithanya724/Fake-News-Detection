@@ -37,7 +37,6 @@ services:
     name: fake-news-frontend
     env: static
     plan: free
-    region: oregon
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
@@ -47,9 +46,9 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      # URL pointing to the deployed backend service
+      # Host of the deployed backend service (e.g. fake-news-backend.onrender.com)
       - key: VITE_API_URL
         fromService:
           type: web
           name: fake-news-backend
-          property: url
+          property: host
