@@ -8,14 +8,15 @@ export const PageHeader = ({
   className = '',
 }) => {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#263244] ${className}`}>
-      <div className="space-y-1">
+    <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#451F1B] ${className}`}>
+      <div className="space-y-1.5">
         {badge && <div className="mb-2">{badge}</div>}
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-          {title}
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-2">
+          <span className="text-[#E57365] text-lg">✳</span>
+          <span>{title}</span>
         </h1>
         {subtitle && (
-          <p className="text-sm text-slate-400 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#A8958B] max-w-3xl leading-relaxed">
             {subtitle}
           </p>
         )}

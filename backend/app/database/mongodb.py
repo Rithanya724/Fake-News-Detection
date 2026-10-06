@@ -281,6 +281,118 @@ class Database:
                         {"feature": "steady", "weight": 0.1534, "indicator": "Credible Indicator"}
                     ],
                     "created_at": "2026-02-20 11:45:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "National Technical Textiles Mission R&D Grants Cleared",
+                    "text": "The Ministry of Textiles approved Rs 300 crore R&D grants under NTTM for geotextiles, medical dressings, and protective flame-retardant suits.",
+                    "prediction": "REAL",
+                    "raw_label": "REAL",
+                    "confidence": 0.924,
+                    "confidence_percentage": 92.4,
+                    "model": "Logistic Regression",
+                    "category": "Technical Textiles",
+                    "important_signals": [
+                        {"feature": "mission", "weight": 0.1621, "indicator": "Credible Indicator"},
+                        {"feature": "approved", "weight": 0.1415, "indicator": "Credible Indicator"}
+                    ],
+                    "created_at": "2026-02-22 09:15:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Exploding Polyester Fabrics Worldwide Ban Hoax",
+                    "text": "SHOCKING ALERT: WHO bans all polyester synthetic fabrics globally! Clothes burst into flames under direct sunlight. Burn all polyester immediately!",
+                    "prediction": "POTENTIALLY MISLEADING",
+                    "raw_label": "FAKE",
+                    "confidence": 0.958,
+                    "confidence_percentage": 95.8,
+                    "model": "Logistic Regression",
+                    "category": "Synthetic",
+                    "important_signals": [
+                        {"feature": "shocking", "weight": -0.1452, "indicator": "Misleading Indicator"},
+                        {"feature": "burst", "weight": -0.1204, "indicator": "Misleading Indicator"}
+                    ],
+                    "created_at": "2026-02-24 16:20:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Cabinet Clears Mandatory Jute Packaging Norms",
+                    "text": "Cabinet Committee on Economic Affairs approved mandatory reservation of 100% foodgrains and 20% refined sugar in eco-friendly jute sacking bags.",
+                    "prediction": "REAL",
+                    "raw_label": "REAL",
+                    "confidence": 0.910,
+                    "confidence_percentage": 91.0,
+                    "model": "Logistic Regression",
+                    "category": "Jute",
+                    "important_signals": [
+                        {"feature": "cabinet", "weight": 0.1583, "indicator": "Credible Indicator"},
+                        {"feature": "approved", "weight": 0.1415, "indicator": "Credible Indicator"}
+                    ],
+                    "created_at": "2026-02-27 13:10:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Instant 50 Lakh Powerloom Cash Grant Viral Rumor",
+                    "text": "Government announces 50 lakh rupees instant grant deposited to powerloom bank accounts tomorrow without any audits or GST tax returns!",
+                    "prediction": "POTENTIALLY MISLEADING",
+                    "raw_label": "FAKE",
+                    "confidence": 0.892,
+                    "confidence_percentage": 89.2,
+                    "model": "Logistic Regression",
+                    "category": "Policy",
+                    "important_signals": [
+                        {"feature": "instant", "weight": -0.1341, "indicator": "Misleading Indicator"},
+                        {"feature": "claim", "weight": -0.0984, "indicator": "Misleading Indicator"}
+                    ],
+                    "created_at": "2026-03-01 18:40:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Tirupur Knitwear Cluster Marks 14% Export Rebound",
+                    "text": "Apparel exporters in Tirupur reported a 14% year-on-year shipment surge to European markets following zero-liquid-discharge green compliance audits.",
+                    "prediction": "REAL",
+                    "raw_label": "REAL",
+                    "confidence": 0.875,
+                    "confidence_percentage": 87.5,
+                    "model": "Logistic Regression",
+                    "category": "Garments",
+                    "important_signals": [
+                        {"feature": "export", "weight": 0.1250, "indicator": "Credible Indicator"},
+                        {"feature": "compliance", "weight": 0.1102, "indicator": "Credible Indicator"}
+                    ],
+                    "created_at": "2026-03-03 11:20:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Mandatory QCO Norms Enforced for Viscose Staple Fibre",
+                    "text": "Bureau of Indian Standards and Ministry of Textiles enforce Quality Control Orders for viscose staple fibres to ensure uniform tensile grade.",
+                    "prediction": "REAL",
+                    "raw_label": "REAL",
+                    "confidence": 0.931,
+                    "confidence_percentage": 93.1,
+                    "model": "Logistic Regression",
+                    "category": "Yarn",
+                    "important_signals": [
+                        {"feature": "standards", "weight": 0.1492, "indicator": "Credible Indicator"},
+                        {"feature": "quality", "weight": 0.1345, "indicator": "Credible Indicator"}
+                    ],
+                    "created_at": "2026-03-05 15:50:00"
+                },
+                {
+                    "user_id": user_id,
+                    "title": "Red Dyed Fabric Toxic Seizure Emergency Hoax",
+                    "text": "URGENT: Police ordered to confiscate all red cotton clothing across all retail shops due to toxic pigment discovery! Stop wearing red immediately!",
+                    "prediction": "POTENTIALLY MISLEADING",
+                    "raw_label": "FAKE",
+                    "confidence": 0.947,
+                    "confidence_percentage": 94.7,
+                    "model": "Logistic Regression",
+                    "category": "Sustainability",
+                    "important_signals": [
+                        {"feature": "urgent", "weight": -0.1388, "indicator": "Misleading Indicator"},
+                        {"feature": "toxic", "weight": -0.1194, "indicator": "Misleading Indicator"}
+                    ],
+                    "created_at": "2026-03-08 08:30:00"
                 }
             ]
             for p in sample_predictions:

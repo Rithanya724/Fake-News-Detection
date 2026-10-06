@@ -43,35 +43,35 @@ export const LoginPage = () => {
         
         {/* Brand & Heading */}
         <div className="text-center space-y-2">
-          <div className="w-9 h-9 rounded-lg bg-[#172033] border border-[#263244] flex items-center justify-center text-emerald-400 mx-auto">
-            <ShieldAlert className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-pill bg-[#28110E] border border-[#5A2C26] flex items-center justify-center text-[#E57365] mx-auto shadow-subtle">
+            <span className="text-xl font-bold">✳</span>
           </div>
-          <h2 className="text-xl font-bold text-white tracking-tight">Sign in to TEX-FACTS</h2>
-          <p className="text-xs text-slate-400">Enter your credentials to access the analytics console</p>
+          <h2 className="text-2xl font-extrabold text-white tracking-tight">Sign in to texfacts.</h2>
+          <p className="text-xs text-[#A8958B]">Enter your credentials to access the intelligence console</p>
         </div>
 
-        {/* Subtle Demo Access Box */}
-        <div className="p-3.5 rounded-card bg-[#111827] border border-[#263244] space-y-2">
-          <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
-            Demo access
+        {/* Demo Access Box */}
+        <div className="p-4 rounded-2xl bg-[#240E0C] border border-[#451F1B] space-y-2.5">
+          <span className="text-[10px] font-bold text-[#A8958B] uppercase tracking-wider block">
+            1-Click Demo Accounts
           </span>
           <div className="grid grid-cols-2 gap-2">
             <button
               type="button"
               onClick={() => handleQuickFill('user@textile.org', 'User@123')}
-              className="p-2 rounded-input bg-[#172033] hover:bg-[#202b42] border border-[#263244] text-left text-xs transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-[#180908] hover:bg-[#341613] border border-[#451F1B] text-left text-xs transition-colors cursor-pointer"
             >
-              <span className="font-semibold text-emerald-400 block">Analyst</span>
-              <span className="text-[10px] text-slate-400">user@textile.org</span>
+              <span className="font-bold text-[#34D399] block">Analyst</span>
+              <span className="text-[10px] text-[#A8958B]">user@textile.org</span>
             </button>
 
             <button
               type="button"
               onClick={() => handleQuickFill('admin@textile.org', 'Admin@123')}
-              className="p-2 rounded-input bg-[#172033] hover:bg-[#202b42] border border-[#263244] text-left text-xs transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-[#180908] hover:bg-[#341613] border border-[#451F1B] text-left text-xs transition-colors cursor-pointer"
             >
-              <span className="font-semibold text-indigo-400 block">Admin</span>
-              <span className="text-[10px] text-slate-400">admin@textile.org</span>
+              <span className="font-bold text-[#E8D2A7] block">Admin</span>
+              <span className="text-[10px] text-[#A8958B]">admin@textile.org</span>
             </button>
           </div>
         </div>
@@ -79,15 +79,15 @@ export const LoginPage = () => {
         {/* Main Form */}
         <div className="ui-card p-6 space-y-4">
           {error && (
-            <div className="p-3 rounded-input bg-rose-950/40 border border-rose-500/30 flex items-center space-x-2 text-rose-400 text-xs">
+            <div className="p-3.5 rounded-xl bg-[#A82824]/20 border border-[#C0322D]/40 flex items-center space-x-2 text-[#FB7185] text-xs">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-3.5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Email address</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Email address</label>
               <input
                 type="email"
                 required
@@ -99,7 +99,7 @@ export const LoginPage = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Password</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Password</label>
               <input
                 type="password"
                 required
@@ -120,9 +120,9 @@ export const LoginPage = () => {
             </Button>
           </form>
 
-          <div className="pt-2 text-center text-xs text-slate-400 border-t border-[#263244]">
+          <div className="pt-3 text-center text-xs text-[#A8958B] border-t border-[#451F1B]">
             Don't have an account?{' '}
-            <Link to="/register" className="text-emerald-400 hover:underline font-medium">
+            <Link to="/register" className="text-[#E57365] hover:text-[#FB7185] font-semibold">
               Register here
             </Link>
           </div>

@@ -47,17 +47,17 @@ export const RegisterPage = () => {
         
         {/* Brand & Heading */}
         <div className="text-center space-y-2">
-          <div className="w-9 h-9 rounded-lg bg-[#172033] border border-[#263244] flex items-center justify-center text-emerald-400 mx-auto">
-            <ShieldAlert className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-pill bg-[#28110E] border border-[#5A2C26] flex items-center justify-center text-[#E57365] mx-auto shadow-subtle">
+            <span className="text-xl font-bold">✳</span>
           </div>
-          <h2 className="text-xl font-bold text-white tracking-tight">Create an Account</h2>
-          <p className="text-xs text-slate-400">Join the textile intelligence analysis platform</p>
+          <h2 className="text-2xl font-extrabold text-white tracking-tight">Create an Account</h2>
+          <p className="text-xs text-[#A8958B]">Join the textile intelligence platform</p>
         </div>
 
         {/* Main Form */}
         <div className="ui-card p-6 space-y-4">
           {error && (
-            <div className="p-3 rounded-input bg-rose-950/40 border border-rose-500/30 flex items-center space-x-2 text-rose-400 text-xs">
+            <div className="p-3.5 rounded-xl bg-[#A82824]/20 border border-[#C0322D]/40 flex items-center space-x-2 text-[#FB7185] text-xs">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
@@ -65,7 +65,7 @@ export const RegisterPage = () => {
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Full name</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Full name</label>
               <input
                 type="text"
                 required
@@ -77,7 +77,7 @@ export const RegisterPage = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Email address</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Email address</label>
               <input
                 type="email"
                 required
@@ -89,7 +89,7 @@ export const RegisterPage = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Password</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Password</label>
               <input
                 type="password"
                 required
@@ -101,7 +101,7 @@ export const RegisterPage = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Confirm password</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Confirm password</label>
               <input
                 type="password"
                 required
@@ -113,7 +113,7 @@ export const RegisterPage = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">Account role</label>
+              <label className="block text-xs font-semibold text-[#D4C4B7] mb-1.5">Account role</label>
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
@@ -135,9 +135,9 @@ export const RegisterPage = () => {
             </Button>
           </form>
 
-          <div className="pt-2 text-center text-xs text-slate-400 border-t border-[#263244]">
+          <div className="pt-3 text-center text-xs text-[#A8958B] border-t border-[#451F1B]">
             Already have an account?{' '}
-            <Link to="/login" className="text-emerald-400 hover:underline font-medium">
+            <Link to="/login" className="text-[#E57365] hover:text-[#FB7185] font-semibold">
               Sign in here
             </Link>
           </div>

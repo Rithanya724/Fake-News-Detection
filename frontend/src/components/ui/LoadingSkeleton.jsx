@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Skeleton = ({ className = '' }) => (
-  <div className={`bg-[#172033] animate-pulse rounded-md ${className}`} />
+  <div className={`bg-[#28110E] animate-pulse rounded-md ${className}`} />
 );
 
 export const CardSkeleton = () => (
